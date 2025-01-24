@@ -1,3 +1,18 @@
+/**
+ * Datasource.kt
+ *
+ * The Datasource class serves as a source of course data for the application.
+ * The `loadCourses` method returns a list of Courses, with
+ * properties such as title, department, number, and capacity.
+ *
+ * Example:
+ * val courses = datasource.loadCourses()
+ *
+ * Author: Osbaldo Arellano
+ * Date: 12/24/2025
+ */
+
+
 package com.example.affirmations.data
 
 import com.example.affirmations.R

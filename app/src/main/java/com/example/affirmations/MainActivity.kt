@@ -1,3 +1,12 @@
+/**
+ * MainActivity.kt
+ *
+ * This file serves as the entry point for the application.
+ *
+ * Author: Osbaldo Arellano
+ * Date: 1/24/2025
+ */
+
 package com.example.affirmations
 
 import android.os.Bundle
@@ -9,6 +18,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -48,6 +58,9 @@ fun CoursesApp() {
 @Composable
 fun CourseList(courseList: List<Course>, modifier: Modifier = Modifier) {
     LazyColumn(modifier = modifier) {
+        // Add extra top margin to the first card
+        // to avoid the card being placed beneath the camera
+        // SOURCE: https://stackoverflow.com/questions/70755946/android-jetpack-compose-lazy-column-items-with-index
         itemsIndexed(courseList) { index, course ->
             CourseCard(
                 course = course,
@@ -55,8 +68,6 @@ fun CourseList(courseList: List<Course>, modifier: Modifier = Modifier) {
                     .padding(
                         start = 8.dp,
                         end = 8.dp,
-                        // Add extra top margin to the first card
-                        // to avoid the card being placed beneath the camera
                         top = if (index == 0) 60.dp else 8.dp,
                         bottom = 8.dp
                     )
@@ -68,7 +79,13 @@ fun CourseList(courseList: List<Course>, modifier: Modifier = Modifier) {
 
 @Composable
 fun CourseCard(course: Course, modifier: Modifier = Modifier) {
-    Card(modifier = modifier) {
+    Card(
+        modifier = modifier,
+        // SOURCE: https://developer.android.com/develop/ui/compose/components/card
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.primary
+        )
+    ) {
         Column {
             Text(
                 text = "${stringResource(course.department)} ${course.number}",
@@ -88,6 +105,7 @@ fun CourseCard(course: Course, modifier: Modifier = Modifier) {
         }
     }
 }
+
 
 @Preview
 @Composable
