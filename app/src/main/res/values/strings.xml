@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Scrollable List</string>
+    <string name="department_cs">CS</string>
+    <string name="CS161_title">Introduction to Computer Science I</string>
+    <string name="CS162_title">Introduction to Computer Science II</string>
+    <string name="CS225_title">Discrete Structures in Computer Science</string>
+    <string name="CS261_title">Data Structures</string>
+    <string name="CS271_title">Computer Architecture and Assembly Language</string>
+    <string name="CS290_title">Web Development</string>
+    <string name="CS325_title">Analysis of Algorithms</string>
+    <string name="CS340_title">Introduction to Databases</string>
+    <string name="CS344_title">Operating Systems I</string>
+    <string name="CS361_title">Software Engineering I</string>
+    <string name="CS362_title">Software Engineering II</string>
+    <string name="CS467_title">Capstone Project</string>
+
+    <string name="name">Osbaldo Arellano</string>
+    <string name="department_assignment">Assignment</string>
+</resources>
